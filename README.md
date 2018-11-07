@@ -91,7 +91,6 @@ sign = base64_encode(hash_hmac("sha256", stringA, secret))
 
 最终得到签名： TD3CcIJ9lHZ1AUYe25E1Yv8dLdA8PB0g8FDIgI00mSQ=
 
-参考库下载：[php]()，[python]()，[c++]()
 
 ## 生成随机数算法
 

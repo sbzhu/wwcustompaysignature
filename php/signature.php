@@ -1,4 +1,14 @@
-<?php
+<?php /*
+ * Copyright (C) 2018 All rights reserved.
+ *   
+ * @File signature.php
+ * @Brief 
+ * @Author abelzhu, abelzhu@tencent.com
+ * @Version 1.0
+ * @Date 2018-11-07
+ *
+ */
+ 
 
 class SignatureGetter { 
 

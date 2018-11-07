@@ -1,4 +1,14 @@
-<?php
+<?php /*
+ * Copyright (C) 2018 All rights reserved.
+ *   
+ * @File test.php
+ * @Brief 
+ * @Author abelzhu, abelzhu@tencent.com
+ * @Version 1.0
+ * @Date 2018-11-07
+ *
+ */
+ 
 include_once("signature.php");
 
 $secret = "gHqphoZuLCqHsSWbnojEKPLsWPE10G8UyKEE1B4uV64";

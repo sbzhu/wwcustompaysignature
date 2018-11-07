@@ -89,7 +89,7 @@ __第四步：__ 以secret为key做hash并base64编码得到签名：
 sign = base64_encode(hash_hmac("sha256", stringA, secret))
 ```
 
-最终得到签名： hbeIqbtMijFLvIn86/2GJivyDFE=
+最终得到签名： TD3CcIJ9lHZ1AUYe25E1Yv8dLdA8PB0g8FDIgI00mSQ=
 
 参考库下载：[php]()，[python]()，[c++]()
 

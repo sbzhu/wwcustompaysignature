@@ -28,11 +28,10 @@ class SignatureGetter {
 		foreach($array as $k => $v) { 
 			if (0 === strpos($v, 'sign=')) { // note: do not use ==, fuck !
 				continue; // escape sign self
-			}
-
+			} 
 			$str = ($str . $v . '&');
 		} 
-		return substr($str, 0, strlen($str)-1);
+		return substr($str, 0, strlen($str)-1); // remove the last &
 	}
 
 	private function Json2Array(array $jsonArray, array &$paramArray)

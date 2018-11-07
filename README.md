@@ -5,7 +5,7 @@
 
 第一步，设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。
 
-__特别注意__以下重要规则：
+__特别注意__ 以下重要规则：
 
 1.  参数名ASCII码从小到大排序（字典序）；
 2.  如果参数的值为空不参与签名；
@@ -16,7 +16,7 @@ __特别注意__以下重要规则：
 
 第二步，对stringA进行HMAC-SHA256运算，再将得到的字符串进行base64编码，得到sign。
 
-__举例：__
+__举例：__ 
 
 假设第三方应用secret为：
 
@@ -47,7 +47,7 @@ secret = "gHqphoZuLCqHsSWbnojEKPLsWPE10G8UyKEE1B4uV64"
 }
 ```
 
-__第一步：__参数按照key=value的格式构造字符串集合
+__第一步：__ 参数按照key=value的格式构造字符串集合
 
 ```bash
 errcode=0
@@ -63,7 +63,7 @@ nonce_str=5K8264ILTKCH16CQ2502SI8ZNMTM67VS
 
 ```注意：```1. sign并不参与签名；2. order_list是数组类型，不直接参与签名，而是用它的元素来参与签名。
 
-__第二步：__将集合按照字典序排序
+__第二步：__ 将集合按照字典序排序
 
 ```bash
 errcode=0
@@ -77,13 +77,13 @@ total_num=2
 ts=1541498084
 ```
 
-__第三步：__拼接字符串：
+__第三步：__ 拼接字符串：
 
 ```python
 stringA = "errcode=0&errmsg=ok&nonce_str=5K8264ILTKCH16CQ2502SI8ZNMTM67VS&order_type=0&order_type=1&out_trade_no=1458098496971&out_trade_no=1458098496983&total_num=2&ts=1541498084"
 ```
 
-__第四步：__以secret为key做hash并base64编码得到签名：
+__第四步：__ 以secret为key做hash并base64编码得到签名：
 
 ```python
 sign = base64_encode(hash_hmac("sha256", stringA, secret))

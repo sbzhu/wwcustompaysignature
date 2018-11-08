@@ -91,6 +91,7 @@ sign = base64_encode(hash_hmac("sha256", stringA, secret))
 
 最终得到签名： TD3CcIJ9lHZ1AUYe25E1Yv8dLdA8PB0g8FDIgI00mSQ=
 
+而接收到的签名为 "sign": "C380BEC2BFD727A4B6845133519F3AD6"，两者不一致，那么肯定是被篡改数据了 ！
 
 ## 生成随机数算法
 

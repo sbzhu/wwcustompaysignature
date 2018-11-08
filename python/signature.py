@@ -24,11 +24,8 @@ class SignatureGetter(object):
     def __init__(self, secret):
         self.secret = secret
 
-    def HmacSha256(self, data):
-
- 
-     message = bytes("Message").encode('utf-8')
-     secret = bytes("secret").encode('utf-8')
-
-     signature = base64.b64encode(hmac.new(secret, message, digestmod=hashlib.sha256).digest())
-     print(signature)
+    def HmacSha256(self, data): 
+        data = bytes(data).encode('utf-8')
+        secret = bytes(self.secret).encode('utf-8') 
+        signature = base64.b64encode(hmac.new(secret, data, digestmod=hashlib.sha256).digest())
+        return signature

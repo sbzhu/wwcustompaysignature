@@ -61,7 +61,7 @@ ts=1541498084
 nonce_str=5K8264ILTKCH16CQ2502SI8ZNMTM67VS
 ```
 
-```注意：```1. sign并不参与签名；2. order_list是数组类型，不直接参与签名，而是用它的元素来参与签名。
+```注意：```1. sign并不参与签名；2. order_list是数组类型，不直接参与签名，而是用它的元素（out_trade_no、order_type）来参与签名。
 
 __第二步：__ 将集合按照字典序排序
 

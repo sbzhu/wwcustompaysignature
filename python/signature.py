@@ -11,17 +11,24 @@
  #
  #
 
-import base64
 import string
 import random
 import hashlib
 import time
 import struct
-import sys                                                                                                                                                                             
+import sys    
+import hmac
+import base64
  
 class SignatureGetter(object):
     def __init__(self, secret):
         self.secret = secret
 
     def HmacSha256(self, data):
-        print data + ' ' + self.secret
+
+ 
+     message = bytes("Message").encode('utf-8')
+     secret = bytes("secret").encode('utf-8')
+
+     signature = base64.b64encode(hmac.new(secret, message, digestmod=hashlib.sha256).digest())
+     print(signature)

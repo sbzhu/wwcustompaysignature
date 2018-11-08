@@ -19,13 +19,41 @@ import struct
 import sys    
 import hmac
 import base64
+import json
  
 class SignatureGetter(object):
     def __init__(self, secret):
         self.secret = secret
 
+    def Get(self, jsonStr) : 
+        jsonDict = json.loads(jsonStr)
+
+        paramList = []
+        self.Json2List(jsonDict, paramList)
+
+        paramList.sort()
+
+        return self.HmacSha256(self.List2String(paramList))
+
+    def List2String(self, paramList):
+        str = ""
+        for param in paramList:
+            if 0 == param.find('sign='):
+                continue # egnore sign self
+            str += (param + '&')
+        return str.rstrip('&')
+
+
     def HmacSha256(self, data): 
         data = bytes(data).encode('utf-8')
         secret = bytes(self.secret).encode('utf-8') 
         signature = base64.b64encode(hmac.new(secret, data, digestmod=hashlib.sha256).digest())
-        return signature
+        return signature 
+
+    def Json2List(self, jsonDict, paramList): 
+        for k, v in jsonDict.items():
+            if isinstance(v, list):
+                for item in v:
+                    self.Json2List(item, paramList)
+            else :
+                paramList.append(k + '=' + str(v))

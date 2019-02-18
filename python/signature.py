@@ -38,8 +38,8 @@ class SignatureGetter(object):
     def List2String(self, paramList):
         str = ""
         for param in paramList:
-            if 0 == param.find('sign='):
-                continue # egnore sign self
+            if 0 == param.find('sig='):
+                continue # egnore sig self
             str += (param + '&')
         return str.rstrip('&')
 

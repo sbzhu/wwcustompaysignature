@@ -36,8 +36,8 @@ class SignatureGetter {
 		//
 		$str = "";
 		foreach($array as $k => $v) { 
-			if (0 === strpos($v, 'sign=')) { // note: do not use ==, fuck !
-				continue; // escape sign self
+			if (0 === strpos($v, 'sig=')) { // note: do not use ==, fuck !
+				continue; // escape sig self
 			} 
 			$str = ($str . $v . '&');
 		} 

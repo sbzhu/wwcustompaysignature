@@ -60,7 +60,7 @@ std::string CustomPaySignature::GetSourceString(const std::vector<std::string> v
     // make string
     std::string sParamString;
     for (const auto & item : vecParam) { 
-        if (0 == item.find("sign=")) continue;  // do not use sign self
+        if (0 == item.find("sig=")) continue;  // do not use sig self
         sParamString += (item + '&');
     }
     if (sParamString.size() > 0) sParamString.erase(sParamString.size() - 1); // remove the last &

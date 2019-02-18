@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         ], \
         \"ts\": 1541498084, \
         \"nonce_str\": \"5K8264ILTKCH16CQ2502SI8ZNMTM67VS\", \
-        \"sign\": \"C380BEC2BFD727A4B6845133519F3AD6\" \
+        \"sig\": \"C380BEC2BFD727A4B6845133519F3AD6\" \
     }";
 
 

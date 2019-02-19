@@ -16,9 +16,9 @@ from signature import SignatureGetter
 secret = "at23pxnPBNQY3JiA8N5U1gabiQqxZwqH_Gihg7a_wrULmlOPVP-iiRjv9JWYPrDk"
 json = '''
     {
-    	   "orderid" : "ord7",
+    	"orderid" : "ord7",
         "buyer_corpid": "ww66302cfadbdd3c64",
-    	   "buyer_userid" : "invitetest",
+    	"buyer_userid" : "invitetest",
         "product_id": "product_id_xxx",
         "product_name": "product_name_xxx",
         "product_detail": "product_detail_xxx",

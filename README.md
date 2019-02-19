@@ -87,10 +87,10 @@ stringA = "buyer_corpid=ww66302cfadbdd3c64&buyer_userid=invitetest&nonce_str=129
 __第四步：__ 以secret为key做hash并base64编码得到签名：
 
 ```python
-sign = base64_encode(hash_hmac("sha256", stringA, secret))
+sig = base64_encode(hash_hmac("sha256", stringA, secret))
 ```
 
-最终得到签名： sign = "/WTXl/L2kJCYKJE5yY2JZvPq3rUjFf/pf39UhyJ2GUo="
+最终得到签名： sig = "/WTXl/L2kJCYKJE5yY2JZvPq3rUjFf/pf39UhyJ2GUo="
 
 而接收到的签名为 "sig": "mPOwVW/vQ74xN+b+Yu1KMa9RrmhKJaJjAtXHTof+EpU="，两者不一致，那么很有可能是被第三者篡改数据了 ！
 

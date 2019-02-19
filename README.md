@@ -21,7 +21,7 @@ __举例：__
 假设服务商的ProviderSecret为：
 
 ```python
-secret = "vt23pxnPBNQY3JiA8N5U1g__iQqxZwqH_Gih07a_wrULmlOPVP-HiRjv9JWYPrDJ"
+secret = "at23pxnPBNQY3JiA8N5U1gabiQqxZwqH_Gihg7a_wrULmlOPVP-iiRjv9JWYPrDk"
 ```
 
 接收到的json参数如下：
@@ -37,6 +37,7 @@ secret = "vt23pxnPBNQY3JiA8N5U1g__iQqxZwqH_Gih07a_wrULmlOPVP-HiRjv9JWYPrDJ"
         "unit_name": "台",
         "unit_price": 1,
         "num": 3,
+        "nonce_str" : "129031823",
         "ts": 1548302135,
         "sig": "mPOwVW/vQ74xN+b+Yu1KMa9RrmhKJaJjAtXHTof+EpU="
 }
@@ -55,6 +56,7 @@ product_detail=product_detail_xxx
 unit_name=台
 unit_price=1
 num=3
+nonce_str=129031823
 ts=1548302135
 ```
 
@@ -65,6 +67,7 @@ __第二步：__ 将集合按照字典序排序
 ```bash
 buyer_corpid=ww66302cfadbdd3c64
 buyer_userid=invitetest
+nonce_str=129031823
 num=3
 orderid=ord7
 product_detail=product_detail_xxx
@@ -78,7 +81,7 @@ unit_price=1
 __第三步：__ 拼接字符串：
 
 ```python
-stringA = "buyer_corpid=ww66302cfadbdd3c64&buyer_userid=invitetest&num=3&orderid=ord7&product_detail=product_detail_xxx&product_id=product_id_xxx&product_name=product_name_xxx&ts=1548302135&unit_name=台&unit_price=1"
+stringA = "buyer_corpid=ww66302cfadbdd3c64&buyer_userid=invitetest&nonce_str=129031823&num=3&orderid=ord7&product_detail=product_detail_xxx&product_id=product_id_xxx&product_name=product_name_xxx&ts=1548302135&unit_name=台&unit_price=1"
 ```
 
 __第四步：__ 以secret为key做hash并base64编码得到签名：
@@ -87,7 +90,7 @@ __第四步：__ 以secret为key做hash并base64编码得到签名：
 sign = base64_encode(hash_hmac("sha256", stringA, secret))
 ```
 
-最终得到签名： mnyEtahO9S19z+7fmETni3Wcv6fzHQtAW6bjb6vlNAM=
+最终得到签名： /WTXl/L2kJCYKJE5yY2JZvPq3rUjFf/pf39UhyJ2GUo=
 
 而接收到的签名为 "sign": "mPOwVW/vQ74xN+b+Yu1KMa9RrmhKJaJjAtXHTof+EpU="，两者不一致，那么很有可能是被第三者篡改数据了 ！
 

@@ -16,6 +16,8 @@ __特别注意__ 以下重要规则：
 ```第二步```，对stringA以服务商的ProviderSecret为key进行HMAC-SHA256运算，并进行base64编码，得到sig。  
 ```第三步```，将计算得到的sig与请求中的sig对比，如果不相同，表示该请求可能被篡改。
 
+--- 
+
 __举例：__ 
 
 假设服务商的ProviderSecret为：

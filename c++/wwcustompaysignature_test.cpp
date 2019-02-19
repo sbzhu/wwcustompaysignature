@@ -19,25 +19,20 @@ using namespace wework;
 
 int main(int argc, char *argv[])
 {
-    const std::string sSecret = "gHqphoZuLCqHsSWbnojEKPLsWPE10G8UyKEE1B4uV64";
+    const std::string sSecret = "vt23pxnPBNQY3JiA8N5U1g__iQqxZwqH_Gih07a_wrULmlOPVP-HiRjv9JWYPrDJ";
 
-    const std::string sJson = "{ \
-        \"errcode\": 0, \
-        \"errmsg\": \"ok\", \
-        \"total_num\": 2, \
-        \"order_list\": [ \
-            { \
-                \"out_trade_no\": \"1458098496971\", \
-                \"order_type\": 1 \
-            }, \
-            { \
-                \"out_trade_no\": \"1458098496983\", \
-                \"order_type\": 0 \
-            } \
-        ], \
-        \"ts\": 1541498084, \
-        \"nonce_str\": \"5K8264ILTKCH16CQ2502SI8ZNMTM67VS\", \
-        \"sig\": \"C380BEC2BFD727A4B6845133519F3AD6\" \
+    const std::string sJson = "{
+    	\"orderid\" : \"ord7\",
+        \"buyer_corpid\": \"ww66302cfadbdd3c64\",
+    	\"buyer_userid\" : \"invitetest\",
+        \"product_id\": \"product_id_xxx\",
+        \"product_name\": \"product_name_xxx\",
+        \"product_detail\": \"product_detail_xxx\",
+        \"unit_name\": \"台\",
+        \"unit_price\": 1,
+        \"num\": 3,
+        \"ts\": 1548302135,
+        \"sig\": \"mPOwVW/vQ74xN+b+Yu1KMa9RrmhKJaJjAtXHTof+EpU=\"
     }";
 
 

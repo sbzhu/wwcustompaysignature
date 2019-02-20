@@ -13,14 +13,14 @@ __特别注意__ 以下重要规则：
 5.  区分大小写；
 6.  接口可能增加字段，验证签名时必须支持增加的扩展字段；
 
-```第二步```，对stringA以服务商的ProviderSecret为key进行HMAC-SHA256运算，并进行base64编码，得到sig。  
+```第二步```，对stringA以服务商的支付密钥为key进行HMAC-SHA256运算，并进行base64编码，得到sig。  
 ```第三步```，将计算得到的sig与请求中的sig对比，如果不相同，表示该请求可能被篡改。
 
 --- 
 
 __举例：__ 
 
-假设服务商的ProviderSecret为：
+假设服务商的支付密钥为：
 
 ```python
 secret = "at23pxnPBNQY3JiA8N5U1gabiQqxZwqH_Gihg7a_wrULmlOPVP-iiRjv9JWYPrDk"

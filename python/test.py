@@ -13,7 +13,7 @@
  
 from signature import SignatureGetter
 
-secret = "at23pxnPBNQY3JiA8N5U1gabiQqxZwqH_Gihg7a_wrULmlOPVP-iiRjv9JWYPrDk"
+secret = "xxxxxxxxxxxxxxxxx"
 json = '''
     {
     	"orderid" : "ord7",

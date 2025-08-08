@@ -19,7 +19,7 @@ using namespace wework;
 
 int main(int argc, char *argv[])
 {
-    const std::string sSecret = "at23pxnPBNQY3JiA8N5U1gabiQqxZwqH_Gihg7a_wrULmlOPVP-iiRjv9JWYPrDk";
+    const std::string sSecret = "xxxxxxxxxxxxxxxxx";
 
     const std::string sJson = "{
     	\"orderid\" : \"ord7\",
